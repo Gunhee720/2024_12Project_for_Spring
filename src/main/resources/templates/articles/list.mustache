@@ -11,10 +11,12 @@
     {{#articles}}
         <tr>
             <th>{{id}}</th>
-            <td>{{title}}</td>
+            <td><a href="article/{{id}}">{{title}}</a></td>
             <td>{{content}}</td>
         </tr>
     {{/articles}}
     </tbody>
 </table>
+
+<a href="/article/new">New Article</a>
 {{>layouts/footer}}

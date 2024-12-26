@@ -32,7 +32,7 @@ public class ArticleController {
         //entity를 DB로 전송
         Article saved =articleRepository.save(article);
         log.info("saved : {}",saved);
-        return "";
+        return "redirect:/article/"+saved.getId();
     }
 
     @GetMapping("/article/{id}")
