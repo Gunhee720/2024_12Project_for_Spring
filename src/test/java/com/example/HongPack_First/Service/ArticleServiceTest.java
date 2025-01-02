@@ -80,4 +80,20 @@ class ArticleServiceTest {
         Article a = articleservice.create(dto);
         assertEquals(expected,a);
     }
+
+    @Test
+    void delete_성공_entity가_지워졌을때() {
+        long id = 1L;
+        Article a = articleservice.delete(id);
+        Article expected = new Article(1L,"강건희","안녕하세요");
+        assertEquals(expected.toString(),a.toString());
+    }
+
+    @Test
+    void delete_실패_entity가_안_지워졌을때() {
+        long id = -1L;
+        Article a = articleservice.delete(id);
+        Article expected = null;
+        assertEquals(expected,a);
+    }
 }
